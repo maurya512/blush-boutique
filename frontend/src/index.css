@@ -2,3 +2,13 @@ main {
   /* pushes down the footer */
   min-height: 80vh;
 }
+
+/* separates the stars */
+.rating span {
+  margin: 0.1rem;
+}
+
+/* spaces out the text within the card */
+h3 {
+  padding: 1rem;
+}

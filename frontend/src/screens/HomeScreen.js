@@ -12,9 +12,9 @@ const HomeScreen = () => {
             <Row>
                 {/* maps through the list of products and accesses them individually */}
                 {products.map(product => (
-                    <Col sm={12} md={6} lg={4} xl={3}>
+                    <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                         {/* component that takes in a prop prd that encompasses the entire product file */}
-                        <Product prd={product}/>
+                        <Product prd={product} />
                     </Col>
                 ))}
             </Row>
