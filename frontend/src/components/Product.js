@@ -1,4 +1,6 @@
 import React from 'react'
+// importing link and using that as opposed to the a tag because a reloads the page
+import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 
 // import Rating Component
@@ -10,18 +12,18 @@ const Product = ({ prd }) => {
         // creates a card for each product
         <Card className="my-3 p-3 rounded">
             {/* href shows the id for each product */}
-            <a href={`/product/${prd._id}`}>
+            <Link to={`/product/${prd._id}`}>
                 {/* image displayed on the top */}
                 <Card.Img src={prd.image} variant="top" />
-            </a>
+            </Link>
 
             {/* displays other relevant info about the products */}
             <Card.Body>
-                <a href={`/product/${prd._id}`}>
+                <Link to={`/product/${prd._id}`}>
                     <Card.Title as="div">
                         <strong>{prd.name}</strong>
                     </Card.Title>
-                </a>
+                </Link>
 
                 {/* displays the review for each product */}
                 {/* each text is brought in as a div so that it can be viewed as a separate form of data */}
@@ -31,7 +33,7 @@ const Product = ({ prd }) => {
                     </div> */}
 
                     {/* Rating component will take in 2 props, the rating and the number of reviews in the original component */}
-                    <Rating value={prd.rating} text={`${prd.numReviews} reviews`} />
+                    <Rating value={prd.rating} text={`${prd.numReviews} reviews`} color="red" />
                 </Card.Text>
 
                 {/* displays the price for each product */}
