@@ -1,12 +1,19 @@
 // entry point for the server
 // requiring express using regular js syntax
 const express = require('express')
+// setup dot env variables 
+const dotenv = require('dotenv')
 const products = require('./data/products')
+
+// dotenv config lets us use all the hidden env variables 
+dotenv.config()
 // initialize express
 const app = express()
 
+
+const PORT = process.env.PORT || 5000
 // listen
-app.listen(5000, console.log('Server running on port 5000'))
+app.listen(PORT, console.log(`Server running on ${process.env.NODE_ENV} on port ${PORT}` ))
 
 
 // get request

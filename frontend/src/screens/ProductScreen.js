@@ -1,15 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 
 // import components
 import Rating from '../components/Rating'
-import products from '../products'
+import axios from 'axios'
+// import products from '../products'
 
 // ProductScreen component
 const ProductScreen = ({ match }) => {
     // use a higher order find method in array that returns a product whose product id === id found in the url and stores in a variable
-    const product = products.find(p => p._id === match.params.id)
+    // const product = products.find(p => p._id === match.params.id)
+
+    const [product, setProduct] = useState({})
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            const { data } = await axios.get(`/api/products/${match.params.id}`)
+
+            setProduct(data)
+        }
+        fetchProduct()
+    }, [match])
+
     return (
         <>
             {/* {product.name} */}
@@ -61,7 +74,7 @@ const ProductScreen = ({ match }) => {
                             <ListGroup.Item>
                                 <Row>
                                     <Col>
-                                    {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
+                                        {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
@@ -69,8 +82,8 @@ const ProductScreen = ({ match }) => {
                             <ListGroup.Item>
                                 <Row>
                                     <Col>
-                                    {/* add to cart button that is disabled if the items not in stock */}
-                                    <Button className="btn-block" type="button" disabled={product.countInStock === 0}>Add to Cart</Button>
+                                        {/* add to cart button that is disabled if the items not in stock */}
+                                        <Button className="btn-block" type="button" disabled={product.countInStock === 0}>Add to Cart</Button>
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
