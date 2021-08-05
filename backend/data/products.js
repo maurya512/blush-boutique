@@ -77,4 +77,4 @@ const products = [
 ]
 
 // export the products file
-module.exports = products;
+export default products

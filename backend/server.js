@@ -1,12 +1,17 @@
 // entry point for the server
 // requiring express using regular js syntax
-const express = require('express')
+import express from 'express'
 // setup dot env variables 
-const dotenv = require('dotenv')
-const products = require('./data/products')
+import dotenv from 'dotenv'
+// import db config file
+import connectDB from './config/db.js'
+import products from './data/products.js'
 
 // dotenv config lets us use all the hidden env variables 
 dotenv.config()
+
+// connection to the database
+connectDB()
 // initialize express
 const app = express()
 
