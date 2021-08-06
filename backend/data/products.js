@@ -2,7 +2,6 @@
 // products file
 const products = [
     {
-        _id: '1',
         name: 'ABC',
         image: '/images/porschetaycan.jpg',
         description: 'Porsche has an electric vehicle now',
@@ -14,7 +13,6 @@ const products = [
         numReviews: 4,
     },
     {
-        _id: '1',
         name: 'ABC',
         image: '/images/porschetaycan.jpg',
         description: 'Porsche has an electric vehicle now',
@@ -26,7 +24,6 @@ const products = [
         numReviews: 4,
     },
     {
-        _id: '1',
         name: 'ABC',
         image: '/images/porschetaycan.jpg',
         description: 'Porsche has an electric vehicle now',
@@ -39,7 +36,6 @@ const products = [
     }
     ,
     {
-        _id: '1',
         name: 'ABC',
         image: '/images/porschetaycan.jpg',
         description: 'Porsche has an electric vehicle now',
@@ -51,7 +47,6 @@ const products = [
         numReviews: 4,
     },
     {
-        _id: '1',
         name: 'ABC',
         image: '/images/porschetaycan.jpg',
         description: 'Porsche has an electric vehicle now',
@@ -63,7 +58,6 @@ const products = [
         numReviews: 4,
     },
     {
-        _id: '1',
         name: 'ABC',
         image: '/images/porschetaycan.jpg',
         description: 'Porsche has an electric vehicle now',
